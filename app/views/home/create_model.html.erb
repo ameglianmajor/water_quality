@@ -1,0 +1,54 @@
+<div class="container create-model-container col-md-6 col-md-offset-3">
+  <h1>Create Model</h1>
+  <div class="how-step">
+    <div class="number-circle">1</div>
+    <div class="display-text">
+      <p>Create a Trihalomethane Factor Model by inputing a weight for each contaminant.</p>
+      <div>
+        <%= form_for :trihalomethane_factor_model , url: {action: "create", controller: "trihalomethane_factor_model"} do |f| %>
+          <div class="checkbox-section">
+            <ul class="checkbox-grid">
+              <% TrihalomethaneFactorModel.filtered_columns.each do |column_name| %>
+                <li>
+                  <%= f.label "#{display(column_name)}" %>
+                  <%= f.text_field column_name.to_sym %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <center class="button-section">
+            <%= f.submit %>
+          </center>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="how-step">
+    <div class="number-circle">2</div>
+    <div class="display-text"> 
+      <p>Create a Complete Factor Model by inputing a weight for each contaminant.</p>
+      <div>
+        <%= form_for :complete_factor_model , url: {action: "create", controller: "complete_factor_model"} do |f| %>
+          <div class="checkbox-section">
+            <ul class="checkbox-grid">
+              <% CompleteFactorModel.filtered_columns.each do |column_name| %>
+                <li>
+                  <%= f.label "#{display(column_name)}" %>
+                  <%= f.text_field column_name.to_sym %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <center class="button-section">
+            <%= f.submit %>
+          </center>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('a[href*="create_model"]').parent().addClass('active');
+  });
+</script>

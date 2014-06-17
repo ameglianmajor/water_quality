@@ -1,0 +1,5 @@
+<tr>
+  <% site.selected_columns(@user_preference).each do |value| %>
+    <td><%= "#{format_entries(value)}" %></td>
+  <% end %>
+</tr>

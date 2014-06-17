@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <table id="contaminant-table" class="table table-striped js-contaminant-table">  
+        <colgroup>
+          <% WaterSample.selected_columns(@user_preference).each do |column_name| %>
+            <col span="1">
+          <% end %>
+        </colgroup>
+        <thead>
+          <tr>
+            <% WaterSample.selected_columns(@user_preference).each do |column_name| %>
+              <th><span class="contaminant-table-header"><%= "#{display(column_name)}" %></span></th>
+            <% end %>
+          </tr>  
+        </thead>  
+        <tbody>
+          <% @all_sites.each do |site| %>
+            <%= render 'site_information_row', :site => site %>
+          <% end %>
+        </tbody>  
+      </table> 
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('a[href*="water_quality"]').parent().addClass('active');
+  });
+</script>

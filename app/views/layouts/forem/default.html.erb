@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Great Water</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= forem_atom_auto_discovery_link_tag %>
+  </head>
+  <body>
+    <%= render partial: "/shared/login_form" %>
+    <%= render partial: "/shared/sign_up_form" %>
+    <%= render partial: "/shared/password_reset_form" %>
+    <%= render partial: "/shared/header" %>
+    <% if false %>
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+    <% end %>
+    <% flash.each do |k,v| %>
+      <div class='flash <%= k %>'><%= v %></div>
+    <% end %>
+    <div id="main-content">
+      <%= yield %>
+    </div>
+    <%= render partial: "/shared/footer" %>
+  </body>
+</html>

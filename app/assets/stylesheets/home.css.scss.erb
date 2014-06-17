@@ -1,0 +1,340 @@
+html,
+body {
+  height: 100%;
+}
+
+#wrap {
+  /* Negative indent footer by its height */
+  margin: 0px auto -40px;
+  /* Pad bottom by footer height */
+  padding: 0 0 80px;
+}
+
+#main-content {
+  padding-top: 90px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  background-color: #eee;
+  text-align: center;
+  border-top: 1px solid #666;
+  padding-top: 14px;
+  font-size: 123%;
+}
+
+#footer p {
+  margin: 4px;
+}
+
+.copyright {
+  font-size: 80%;
+}
+
+#contaminant-table td {
+  font-size: 12px;
+  vertical-align: middle;
+  border: 1px dotted #ccc;
+  padding: 10px 10px 10px 17px;
+}
+
+#contaminant-table tbody td:first-child {
+  padding: 3px;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+@font-face {
+  font-family: 'MuliRegular';
+  src: url(<%= asset_path 'muli-regular-webfont.eot' %>);
+  src: url(<%= "#{asset_path('muli-regular-webfont.eot')}?#iefix" %>) format("embedded-opentype"), url(<%= asset_path 'muli-regular-webfont.woff' %>) format("woff"), url(<%= asset_path 'muli-regular-webfont.ttf' %>) format("truetype"), url( "#{asset_path('muli-regular-webfont.svg')}#muliregular" ) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, h1, h2, h3, h4, h5, a {
+  font-family: 'MuliRegular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+.container {
+  margin-left: 120px;
+}
+
+.display-settings-container {
+  width: 50%;
+  padding-bottom: 120px;
+}
+
+.create-model-container {
+  width: 90%;
+  padding-bottom: 120px;
+}
+
+.container h1, h2, h3, h4 {
+  color: #505050;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+.login-link-top {
+  padding-right: 40px;
+}
+
+#contaminant-table th {
+  vertical-align: middle;
+  width: px;
+}
+
+.how-step {
+  clear: both;
+  padding: 23px 0 0 0;
+}
+
+.how-text {
+  padding: 0px 0 0 0px;
+  font-size: 130%;
+}
+
+.display-text {
+  padding: 10px 0 0 0px;
+  font-size: 130%;
+}
+
+.checkbox-section {
+  clear: both;
+  margin: 20px;
+}
+
+.checkbox-grid li {
+  display: block;
+  float: right;
+  width: 50%;
+}
+
+.checkbox-grid li label {
+  font-size: 12px;
+}
+
+.checkbox-grid li input {
+  float: right;
+  margin-right: 35px;
+}
+
+.button-section {
+  clear: both;
+  padding-top: 20px;
+}
+
+.button-section input {
+  background-color: #63aae1;
+  color: #fff;
+  font: 20px Arial;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.number-circle {
+  float: left;
+  border-radius: 50%;
+  behavior: url(PIE.htc);
+  /* remove if you don't care about IE8 */
+  width: 46px;
+  height: 46px;
+  padding: 5px;
+  margin-right: 15px;
+  background: #fff;
+  color: #fff;
+  background: #63aae1;
+  text-align: center;
+  font: 32px Arial, sans-serif;
+}
+
+
+.contaminant-table-header {
+  padding: 10px 10px 10px 10px;
+  display: inline-block;
+}
+
+.main-nav {
+  padding: 0 5% 0 8%;
+}
+
+.uvp {
+  padding: 5px 5px 5px 16px;
+  width: 64%;
+  background: rgba(60, 131, 181, 0.77);
+  position: absolute;
+  bottom: 0;
+  left: 18%;
+  display: block;
+  text-align: left;
+}
+
+.uvp h1 {
+  color: #fff;
+  font-size: 237%;
+  margin-top: 12px;
+  display: inline;
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1600px) {
+  .uvp h1 {
+    font-size: 310%;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .uvp h1 {
+    font-size: 380%;
+  }
+}
+.landing-container {
+  padding: 0;
+  margin: -26px auto 0 auto;
+  text-align: center;
+}
+
+.join-button {
+  background: #0a8bcd;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 150%;
+  padding: 5px 9px 3px 8px;
+  float: right; 
+  margin: 10px 20% 5px 10px;
+  display: inline;
+  border: 2px solid #fff;
+}
+
+.blue-button {
+  background: #0a8bcd;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  display: inline;
+  border: 2px solid #fff;
+  text-align: center;
+  width: 270px;
+  padding: 5px;
+}
+
+.join-button:hover, .blue-button:hover {
+  background: #0283c5;
+  cursor: pointer;
+}
+
+.ui-widget-content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-image {
+  z-index: -1;
+  position: relative;
+}
+
+.how-container {
+  margin: 0 0 0 23%;
+}
+
+.sign-up-field, .login-field, .password-reset-field, .new-password-field {
+  float: left;
+  clear: both;
+  margin-bottom: 16px;
+  color: #424242;
+}
+
+.sign-up-button, .login-button {
+  margin: 10px 0 0 0;
+}
+
+#sign-up-form, #login-form, #password-reset-form, #new-password-form {
+  margin: 15px 0 0 0;
+}
+
+.login-dialog a, .has-account a {
+  color: #63aae1;
+}
+
+.login-dialog a:hover, .has-account a:hover {
+  text-decoration: underline;
+}
+
+.forgot-password {
+  float: right;
+  margin: 10px 39px 0 0;
+}
+
+.no-account {
+  margin: 15px 0 0 0;
+}
+
+.ui-dialog-titlebar-close {
+  visibility: hidden;
+}
+
+.form-text-input {
+  background-repeat: no-repeat;
+  background-position: 236px 7px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  font-size: 15px;
+  padding: 6px;
+  width: 270px;
+}
+
+.icon-user {
+  background-image: url(<%= asset_path 'icon-user.png' %>);
+}
+
+.icon-password {
+  background-image: url(<%= asset_path 'icon-password.png' %>);
+}
+
+.icon-email {
+  background-image: url(<%= asset_path 'icon-email.png' %>);
+}
+
+.error {
+  color: red;
+}
+
+.sign-up-error {
+  margin: 0 0 10px 0;
+}
+
+.has-account {
+  display: inline-block;
+  margin: 23px 0 0 0;
+  font-size: 86%;
+  color: #5e5e5e;
+}
+
+.user-link {
+  background: #e5e5e5;
+  margin: -20px 0 30px 0;
+  border: 1px dotted #aaa;
+}
+
+nav {
+  margin-top: 0
+}
+
+.welcome-user {
+  padding-top: 15px;
+  color: #111;
+}

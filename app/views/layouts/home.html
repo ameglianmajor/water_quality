@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Great Water</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link rel="icon" href=<%= asset_path("favicon.ico") %> type="image/x-icon">
+  <%= csrf_meta_tags %>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div id="wrap">
+    <%= render partial: "/shared/login_form" %>
+    <%= render partial:  "/shared/sign_up_form" %>
+    <%= render partial: "/shared/password_reset_form" %>
+    <%= render partial: "/shared/header" %>
+    <%= render partial: "/shared/password_reset_notice" %>
+    <%= render partial: "/shared/new_password" %>
+    <% if false %>
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+    <% end %>
+    <div id="main-content">
+      <%= yield %>
+    </div>
+  </div>
+  <%= render partial: "/shared/footer" %>
+</body>
+</html>

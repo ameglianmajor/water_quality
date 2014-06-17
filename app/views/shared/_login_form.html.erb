@@ -1,0 +1,17 @@
+<div class="login-dialog js-login-dialog" title="Log In">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: 'login-form' }) do |f| %>
+    <div class="login-field">
+      <%= f.email_field :email, class: 'text ui-widget-content ui-corner-all form-text-input icon-email', placeholder: 'Email' %>
+    </div>
+    <div class="login-field">
+      <%= f.password_field :password, class: 'text ui-widget-content ui-corner-all form-text-input icon-password', placeholder: 'Password' %>
+    </div>
+    <div class="js-password-reset forgot-password login-field"><a href="#">Forgot Password?</a></div>
+    <div class='login-field modal-submit login-button'>
+      <input type="submit" class="blue-button login-submit" value="Log In" />
+    </div>
+    <div class="login-field js-no-account no-account">
+      <p>Don't have an account? <a href="">Sign up</a></p>
+    </div>
+  <% end %>
+</div>
