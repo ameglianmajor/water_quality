@@ -10,10 +10,16 @@
             <ul class="checkbox-grid">
               <% TrihalomethaneFactorModel.filtered_columns.each do |column_name| %>
                 <li>
-                  <%= f.label "#{display(column_name)}" %>
+                  <%= f.label column_name.to_sym, "#{display(column_name)}" %>
                   <%= f.text_field column_name.to_sym %>
                 </li>
               <% end %>
+            </ul>
+            <ul class = "checkbox-grid final-grid">
+              <li>
+                <%= f.label :name, "#{display('name')}" %>
+                <%= f.text_field :name %>
+              </li>
             </ul>
           </div>
           <center class="button-section">
@@ -26,17 +32,23 @@
   <div class="how-step">
     <div class="number-circle">2</div>
     <div class="display-text"> 
-      <p>Create a Complete Factor Model by inputing a weight for each contaminant.</p>
+      <p>Create a Complete Factor Model by inputing a weight for each normalized contaminant.</p>
       <div>
         <%= form_for :complete_factor_model , url: {action: "create", controller: "complete_factor_model"} do |f| %>
           <div class="checkbox-section">
             <ul class="checkbox-grid">
               <% CompleteFactorModel.filtered_columns.each do |column_name| %>
                 <li>
-                  <%= f.label "#{display(column_name)}" %>
+                  <%= f.label column_name.to_sym, "#{display(column_name)}" %>
                   <%= f.text_field column_name.to_sym %>
                 </li>
               <% end %>
+            </ul>
+            <ul class = "checkbox-grid final-grid">
+              <li>
+                <%= f.label :name, "#{display('name')}" %>
+                <%= f.text_field :name %>
+              </li>
             </ul>
           </div>
           <center class="button-section">

@@ -21,6 +21,7 @@ module FilteredRecord
         when 'id' then false
         when 'created_at' then false
         when 'updated_at' then false
+        when 'name' then false
         else true
       end
     end

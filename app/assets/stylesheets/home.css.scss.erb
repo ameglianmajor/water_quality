@@ -1,33 +1,27 @@
 html,
 body {
-  height: 100%;
+  font-size: .875em;
 }
 
 #wrap {
   /* Negative indent footer by its height */
-  margin: 0px auto -40px;
+  margin: 0 auto -2.5em;
   /* Pad bottom by footer height */
-  padding: 0 0 80px;
-}
-
-#main-content {
-  padding-top: 90px;
+  padding: 0 0 5em;
 }
 
 #footer {
   position: fixed;
   bottom: 0;
-  height: 80px;
   width: 100%;
   background-color: #eee;
   text-align: center;
   border-top: 1px solid #666;
-  padding-top: 14px;
-  font-size: 123%;
+  padding-top: .7em;
 }
 
 #footer p {
-  margin: 4px;
+  margin: .25em;
 }
 
 .copyright {
@@ -63,7 +57,8 @@ body, h1, h2, h3, h4, h5, a {
 }
 
 .container {
-  margin-left: 120px;
+  margin-left: 7.5vw;
+  width: 80vw;
 }
 
 .display-settings-container {
@@ -76,8 +71,460 @@ body, h1, h2, h3, h4, h5, a {
   padding-bottom: 120px;
 }
 
-.container h1, h2, h3, h4 {
-  color: #505050;
+@media only screen and (min-width: 768px) {
+
+  @media only screen and (max-width: 1059px) {
+    #main-content {
+      padding-top: 24vh;
+    }
+  }
+
+  @media only screen and (min-width: 1060px) {
+    #main-content {
+      padding-top: 6.25em;
+    }
+  }
+
+  .forgot-password {
+    float: right;
+    margin: 10px 39px 0 6px;
+  }
+
+  .checkbox-section {
+    clear: both;
+    margin: 20px;
+  }
+
+  .checkbox-grid li {
+    display: block;
+    float: left;
+    width: 50%;
+  }
+
+  .checkbox-grid li label {
+    font-size: 1.5vw;
+    width: 14vw;
+  }
+
+  .checkbox-grid li input {
+    float: right;
+    margin-right: 3vw;
+    width: 12vw;
+    display: inline-block;
+  }
+
+  .display-settings-container {
+    width: 95vw;
+    margin-left: 2vw !important;
+  }
+
+  .display-settings-label {
+    font-size: 2vw !important;
+    width: 35vw !important;
+  }
+
+  .display-settings-checkbox {
+    width: 2vw !important;
+    margin-right: 2vw !important;
+    margin-top: 2vh !important;
+  }
+
+ .container h1, h2, h3, h4 {
+   font-size: 3vw;
+   color: #505050;
+  }
+
+  .display-text {
+    padding: 1.5vh 0 0 0px;
+    font-size: 2.5vw;
+  }
+
+  .number-circle {
+    float: left;
+    border-radius: 50%;
+    behavior: url(PIE.htc);
+    /* remove if you don't care about IE8 */
+    width: 1.5em;
+    height: 1.5em;
+    padding: .5vw;
+    margin-right: 2vw;
+    background: #fff;
+    color: #fff;
+    background: #63aae1;
+    text-align: center;
+    font: 3vw Arial, sans-serif;
+  }
+
+  .how-step {
+    clear: both;
+    padding: 2vh 0 0 0;
+  }
+
+  .how-text {
+    padding: 1.5vh 0 0 0;
+    font-size: 1.5vw;
+  }
+
+  .main-image {
+    z-index: -1;
+    position: relative;
+    width: 64%
+  }
+
+  .uvp {
+    padding: .25em .25vw .25em 1.0vw;
+    width: 64%;
+    height: 21%;
+    background: rgba(60, 131, 181, 0.77);
+    position: absolute;
+    bottom: 0;
+    left: 18%;
+    display: block;
+    text-align: left;
+    font-size: 1vh;
+  }
+
+  .uvp h1 {
+    color: #fff;
+    font-size: 1.7vw;
+    margin-top: .3vh;
+    display: inline;
+  }
+
+  .join-button {
+    background: #0a8bcd;
+    color: #fff;
+    border: none;
+    border-radius: .273vw;
+    font-size: 1.2vw;
+    padding: .40vh .49vw .164vh .436vw;
+    float: right;
+    margin: .40vh 20% .20vh .54vw;
+    display: inline;
+    border: 1px solid #fff;
+  }
+
+  .ui-dialog {
+    z-index: 1040; 
+  }
+
+  .sign-up-field, .login-field, .password-reset-field, .new-password-field {
+    float: left;
+    clear: both;
+    margin-bottom: 16px;
+    color: #424242;
+  }
+
+  .form-text-input {
+    background-repeat: no-repeat;
+    background-position: 236px 7px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    font-size: 15px;
+    padding: 6px;
+    width: 270px;
+  }
+
+  .blue-button {
+    background: #0a8bcd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    display: inline;
+    border: 2px solid #fff;
+    text-align: center;
+    width: 270px;
+    padding: 5px;
+  }
+
+  .button-section {
+    clear: both;
+    padding-top: 20px;
+  }
+
+  .button-section input {
+    background-color: #63aae1;
+    color: #fff;
+    font: 20px Arial;
+    border-radius: 10px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #main-content {
+    padding-top: 6.25em;
+    padding-bottom: 3em;
+  }
+
+  .container h1, h2, h3, h4 {
+    margin-top: .5vh;
+    font-size: 5vw;
+    color: #505050;
+  }
+
+  .number-circle {
+    float: left;
+    border-radius: 50%;
+    behavior: url(PIE.htc);
+    /* remove if you don't care about IE8 */
+    width: 1.5em;
+    height: 1.5em;
+    padding: .2em;
+    margin-right: 2vw;
+    background: #fff;
+    color: #fff;
+    background: #63aae1;
+    text-align: center;
+    font: 4vw Arial, sans-serif;
+  }
+  
+  .how-step {
+    clear: both;
+    padding: 1.5vh 0 0 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+
+    .forgot-password {
+      float: right;
+      margin: 10px 9px 0 0;
+    }
+
+    .how-text {
+      padding: .2vh 0 0 0;
+      font-size: 3vw;
+    }
+
+    .ui-dialog {
+      z-index: 1040;
+      width: 90% !important;
+    }
+
+    .sign-up-field, .login-field, .password-reset-field, .new-password-field {
+      float: left;
+      clear: both;
+      margin-bottom: 16px;
+      width: 100%;
+      color: #424242;
+    }
+
+    .form-text-input {
+      background-repeat: no-repeat;
+      background-position: 236px 7px;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      display: block;
+      font-size: 15px;
+      padding: 6px;
+      width: 100%;
+    }
+
+    .blue-button {
+      background: #0a8bcd;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      display: inline;
+      border: 2px solid #fff;
+      text-align: center;
+      width: 100%;
+      padding: 5px;
+    }
+
+    .display-text {
+      padding: .5vh 0 0 0px;
+      font-size: 2vh;
+    }
+
+    .checkbox-section {
+      clear: both;
+      margin-left: .5vw;
+    }
+
+    .checkbox-grid {
+      clear: both;
+      margin-left: .5vw;
+    }
+
+    .checkbox-grid li {
+      margin-left: -7vw;
+      display: block;
+      float: left;
+    }
+
+    .checkbox-grid li label {
+      font-size: 3vw;
+      width: 48vw;
+    }
+
+    .checkbox-grid li input {
+      float: right;
+      margin-right: 3vw;
+      width: 15vw;
+      display: inline-block;
+    }
+
+    .display-settings-container {
+      width: 95vw;
+      margin-left: 2.5vw !important;
+    }
+
+    .display-settings-label {
+      font-size: 3vw !important;
+      width: 70vw !important;
+    }
+
+    .display-settings-checkbox {
+      width: 2vw !important;
+      margin-right: 2vw !important;
+    }
+
+  }
+
+  @media only screen and (min-width: 500px) {
+
+    .forgot-password {
+      float: right;
+      margin: 10px 39px 0 6px;
+    }
+
+    .how-text {
+      padding: 1vh 0 0 0;
+      font-size: 2vw;
+    }
+
+    .ui-dialog {
+      z-index: 1040;
+    }
+
+    .sign-up-field, .login-field, .password-reset-field, .new-password-field {
+      float: left;
+      clear: both;
+      margin-bottom: 16px;
+      color: #424242;
+    }
+
+    .form-text-input {
+      background-repeat: no-repeat;
+      background-position: 236px 7px;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      display: block;
+      font-size: 15px;
+      padding: 6px;
+      width: 270px;
+    }
+
+    .blue-button {
+      background: #0a8bcd;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      display: inline;
+      border: 2px solid #fff;
+      text-align: center;
+      width: 270px;
+      padding: 5px;
+    }
+
+    .display-text {
+      padding: 1vh 0 0 0;
+      font-size: 2.5vh;
+    }
+
+    .checkbox-section {
+      clear: both;
+      margin: 20px;
+    }
+
+    .checkbox-grid li {
+      display: block;
+      float: left;
+    }
+
+    .checkbox-grid li label {
+      font-size: 2vw;
+      width: 35vw;
+    }
+
+    .checkbox-grid li input {
+      float: right;
+      margin-right: 3vw;
+      width: 20vw;
+      display: inline-block;
+    }
+
+    .display-settings-container {
+      width: 95vw;
+      margin-left: 2.5vw !important;
+    }
+
+    .display-settings-label {
+      font-size: 2.5vw !important;
+      width: 65vw !important;
+    }
+
+    .display-settings-checkbox {
+      width: 2vw !important;
+      margin-right: 2vw !important;
+    }
+
+  }
+
+  .main-image {
+    z-index: -1;
+    position: relative;
+    width: 90%
+  }
+
+  .uvp {
+    padding: .25em .25vw 1vh 1.0vw;
+    width: 90%;
+    height: 25%;
+    background: rgba(60, 131, 181, 0.77);
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    display: block;
+    text-align: left;
+    font-size: 1vh;
+  }
+
+  .uvp h1 {
+    color: #fff;
+    font-size: 2.3vw;
+    margin-top: 1vh;
+    display: inline;
+  }
+
+  .join-button {
+    background: #0a8bcd;
+    color: #fff;
+    border: none;
+    border-radius: .273vw;
+    font-size: 2vw;
+    padding: .2vh .49vw .2vh .436vw;
+    float: right;
+    margin: .40vh 20% .20vh .54vw;
+    display: inline;
+    border: 1px solid #fff;
+  }
+
+  .button-section {
+    clear: both;
+    padding-top: 20px;
+  }
+
+  .button-section input {
+    background-color: #63aae1;
+    color: #fff;
+    font: 3.5vw Arial;
+    border-radius: 3vw;
+    padding: 2vw;
+  }
+
 }
 
 h1 {
@@ -97,71 +544,6 @@ em {
   width: px;
 }
 
-.how-step {
-  clear: both;
-  padding: 23px 0 0 0;
-}
-
-.how-text {
-  padding: 0px 0 0 0px;
-  font-size: 130%;
-}
-
-.display-text {
-  padding: 10px 0 0 0px;
-  font-size: 130%;
-}
-
-.checkbox-section {
-  clear: both;
-  margin: 20px;
-}
-
-.checkbox-grid li {
-  display: block;
-  float: right;
-  width: 50%;
-}
-
-.checkbox-grid li label {
-  font-size: 12px;
-}
-
-.checkbox-grid li input {
-  float: right;
-  margin-right: 35px;
-}
-
-.button-section {
-  clear: both;
-  padding-top: 20px;
-}
-
-.button-section input {
-  background-color: #63aae1;
-  color: #fff;
-  font: 20px Arial;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-.number-circle {
-  float: left;
-  border-radius: 50%;
-  behavior: url(PIE.htc);
-  /* remove if you don't care about IE8 */
-  width: 46px;
-  height: 46px;
-  padding: 5px;
-  margin-right: 15px;
-  background: #fff;
-  color: #fff;
-  background: #63aae1;
-  text-align: center;
-  font: 32px Arial, sans-serif;
-}
-
-
 .contaminant-table-header {
   padding: 10px 10px 10px 10px;
   display: inline-block;
@@ -171,64 +553,11 @@ em {
   padding: 0 5% 0 8%;
 }
 
-.uvp {
-  padding: 5px 5px 5px 16px;
-  width: 64%;
-  background: rgba(60, 131, 181, 0.77);
-  position: absolute;
-  bottom: 0;
-  left: 18%;
-  display: block;
-  text-align: left;
-}
-
-.uvp h1 {
-  color: #fff;
-  font-size: 237%;
-  margin-top: 12px;
-  display: inline;
-}
-
-/* Large screens ----------- */
-@media only screen and (min-width: 1600px) {
-  .uvp h1 {
-    font-size: 310%;
-  }
-}
-@media only screen and (min-width: 1900px) {
-  .uvp h1 {
-    font-size: 380%;
-  }
-}
 .landing-container {
   padding: 0;
-  margin: -26px auto 0 auto;
+  margin: -1.0em auto 0 auto;
   text-align: center;
-}
-
-.join-button {
-  background: #0a8bcd;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 150%;
-  padding: 5px 9px 3px 8px;
-  float: right; 
-  margin: 10px 20% 5px 10px;
-  display: inline;
-  border: 2px solid #fff;
-}
-
-.blue-button {
-  background: #0a8bcd;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  display: inline;
-  border: 2px solid #fff;
-  text-align: center;
-  width: 270px;
-  padding: 5px;
+  font-size: 1em;
 }
 
 .join-button:hover, .blue-button:hover {
@@ -241,20 +570,8 @@ em {
   text-decoration: none;
 }
 
-.main-image {
-  z-index: -1;
-  position: relative;
-}
-
 .how-container {
   margin: 0 0 0 23%;
-}
-
-.sign-up-field, .login-field, .password-reset-field, .new-password-field {
-  float: left;
-  clear: both;
-  margin-bottom: 16px;
-  color: #424242;
 }
 
 .sign-up-button, .login-button {
@@ -273,28 +590,12 @@ em {
   text-decoration: underline;
 }
 
-.forgot-password {
-  float: right;
-  margin: 10px 39px 0 0;
-}
-
 .no-account {
   margin: 15px 0 0 0;
 }
 
 .ui-dialog-titlebar-close {
   visibility: hidden;
-}
-
-.form-text-input {
-  background-repeat: no-repeat;
-  background-position: 236px 7px;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: block;
-  font-size: 15px;
-  padding: 6px;
-  width: 270px;
 }
 
 .icon-user {
@@ -331,10 +632,16 @@ em {
 }
 
 nav {
-  margin-top: 0
+  margin-top: 0;
 }
 
 .welcome-user {
-  padding-top: 15px;
+  padding-top: 17px;
+  padding-left: 15px;
   color: #111;
+}
+
+.final-grid {
+  padding-top: 2vh;
+  clear: both;
 }

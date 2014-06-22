@@ -10,8 +10,8 @@
                 <ul class="checkbox-grid">
                   <% UserPreference.filtered_columns.each do |column_name| %>
                     <li>
-                      <%= f.label "#{display(column_name)}" %>
-                      <%= f.check_box column_name.to_sym, {}, true, false %>
+                      <%= f.label column_name.to_sym, "#{display(column_name)}", :class => "display-settings-label" %>
+                      <%= f.check_box column_name.to_sym, {:class => "display-settings-checkbox"}, true, false %>
                     </li>
                   <% end %>
                 </ul>
@@ -33,8 +33,8 @@
                 <ul class="checkbox-grid">
                   <% @all_trihalomethane_factor_models.each do |model| %>
                     <li>
-                      <%= f.label "#{model.name}" %>
-                      <%= f.check_box "#{model.name.to_sym}", {}, model.id, false %>
+                      <%= f.label model.sym_name, "#{model.name}", :class => "display-settings-label" %>
+                      <%= f.check_box model.sym_name, {:class => "display-settings-checkbox"}, model.id, false %>
                     </li>
                   <% end %>
                 </ul>
@@ -56,8 +56,8 @@
                 <ul class="checkbox-grid">
                   <% @all_complete_factor_models.each do |model| %>
                     <li>
-                      <%= f.label "#{model.name}" %>
-                      <%= f.check_box "#{model.name.to_sym}", {}, model.id, false %>
+                      <%= f.label model.sym_name, "#{model.name}", :class => "display-settings-label" %>
+                      <%= f.check_box model.sym_name, {:class => "display-settings-checkbox"}, model.id, false %>
                     </li>
                   <% end %>
                 </ul>
