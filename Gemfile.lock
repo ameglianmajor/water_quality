@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git://github.com/radar/forem.git
-  revision: 11d3b015a4c6930874677e913a3f6e40f0f68587
+  revision: 314de2115f1ad026cb099f9df52c135d1e615fe8
   branch: rails4
   specs:
     forem (1.0.0.beta1)
@@ -71,7 +71,7 @@ GEM
     byebug (2.7.0)
       columnize (~> 0.3)
       debugger-linecache (~> 1.2)
-    cancancan (1.8.2)
+    cancancan (1.8.4)
     capybara (2.3.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -83,8 +83,6 @@ GEM
       json
     celluloid (0.15.2)
       timers (~> 1.1.0)
-    childprocess (0.5.3)
-      ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -97,6 +95,7 @@ GEM
     columnize (0.8.9)
     d3-rails (3.4.4)
       railties (>= 3.1)
+    database_cleaner (1.3.0)
     debugger-linecache (1.2.0)
     decorators (1.0.3)
       railties (>= 3.0.19, != 3.2.9, != 3.2.8, != 3.2.7, != 3.2.6, != 3.2.5, != 3.2.4, != 3.2.3, != 3.2.2, != 3.2.10, != 3.2.1, != 3.2.0, != 3.1.9, != 3.1.8, != 3.1.7, != 3.1.6, != 3.1.5, != 3.1.4, != 3.1.3, != 3.1.2, != 3.1.1, != 3.1.0)
@@ -126,22 +125,21 @@ GEM
       lumberjack (~> 1.0)
       pry (>= 0.9.12)
       thor (>= 0.18.1)
-    guard-spork (1.5.1)
-      childprocess (>= 0.2.3)
-      guard (>= 1.1)
-      spork (>= 0.8.4)
+    guard-rspec (4.2.10)
+      guard (~> 2.1)
+      rspec (>= 2.14, < 4.0)
     hike (1.2.3)
     httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.9)
-    jbuilder (2.1.0)
+    jbuilder (2.1.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jquery-rails (3.1.0)
+    jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-tablesorter (1.12.1)
+    jquery-tablesorter (1.12.2)
       railties (>= 3.1, < 5)
     jquery-ui-rails (4.2.1)
       railties (>= 3.2.16)
@@ -152,11 +150,11 @@ GEM
     kgio (2.9.2)
     launchy (2.4.2)
       addressable (~> 2.3)
-    listen (2.7.8)
+    listen (2.7.9)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-    lumberjack (1.0.6)
+    lumberjack (1.0.7)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -166,7 +164,7 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.6.0)
-    minitest (5.3.4)
+    minitest (5.3.5)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     mysql2 (0.3.16)
@@ -223,12 +221,16 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     redcarpet (3.0.0)
-    rspec-core (3.0.1)
+    rspec (3.0.0)
+      rspec-core (~> 3.0.0)
+      rspec-expectations (~> 3.0.0)
+      rspec-mocks (~> 3.0.0)
+    rspec-core (3.0.2)
       rspec-support (~> 3.0.0)
-    rspec-expectations (3.0.1)
+    rspec-expectations (3.0.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.0.0)
-    rspec-mocks (3.0.1)
+    rspec-mocks (3.0.2)
       rspec-support (~> 3.0.0)
     rspec-rails (3.0.1)
       actionpack (>= 3.0)
@@ -238,7 +240,7 @@ GEM
       rspec-expectations (~> 3.0.0)
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
-    rspec-support (3.0.0)
+    rspec-support (3.0.2)
     sanitize (2.0.6)
       nokogiri (>= 1.4.4)
     sass (3.2.19)
@@ -256,8 +258,9 @@ GEM
       actionpack (~> 4.0)
       activemodel (~> 4.0)
     slop (3.5.0)
-    spork (0.9.2)
     spring (1.1.3)
+    spring-commands-rspec (1.0.2)
+      spring (>= 0.9.1)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -304,13 +307,13 @@ DEPENDENCIES
   capybara-webkit
   coffee-rails (~> 4.0.0)
   d3-rails
+  database_cleaner
   devise
   factory_girl_rails
   forem!
   forem-bootstrap!
   forem-redcarpet!
-  guard
-  guard-spork
+  guard-rspec
   httparty
   jbuilder (~> 2.0)
   jquery-rails
@@ -329,8 +332,8 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
-  spork
   spring
+  spring-commands-rspec
   turbolinks
   uglifier (>= 1.3.0)
   unicorn

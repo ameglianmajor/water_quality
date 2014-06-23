@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
+
+  before_filter :authenticate_user!, only: [:display_settings, :create_model]
+
   def index
   end
 
@@ -6,6 +9,9 @@ class HomeController < ApplicationController
     @all_sites = WaterSample.all
     @length = WaterSample.column_names.length
     @user_preference = current_user ? current_user.user_preference : nil
+  end
+
+  def about
   end
 
   def display_settings
@@ -16,6 +22,4 @@ class HomeController < ApplicationController
   def create_model
   end
 
-  def about
-  end
 end

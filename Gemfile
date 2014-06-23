@@ -37,15 +37,19 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
+end
+
+group :test do
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'poltergeist'
+  gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'guard'
-  gem 'guard-spork'
+  gem 'guard-rspec'
   gem 'launchy'
+  gem 'poltergeist'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
   gem 'rspec-rails'
-  gem 'spork'
+  gem 'spring-commands-rspec'
 end
 
 group :production do
