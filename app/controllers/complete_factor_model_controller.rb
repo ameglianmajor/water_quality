@@ -9,22 +9,8 @@ class CompleteFactorModelController < ApplicationController
   private
 
   def complete_factor_model_params
-    params.require("complete_factor_model").permit(
-      "normalized_chloroform_weight",
-      "normalized_bromoform_weight",
-      "normalized_bromodichloromethane_weight",
-      "normalized_dibromochloromethane_weight",
-      "normalized_arsenic_weight",
-      "normalized_nitrate_weight",
-      "normalized_alpha_activity_weight",
-      "normalized_beta_activity_weight",
-      "normalized_radium_226_weight",
-      "normalized_radium_228_weight",
-      "normalized_tritium_weight",
-      "normalized_strontium_90_weight",
-      "normalized_uranium_weight",
-      "name"
-    )
+    permit_arguments = CompleteFactorModel.column_names.select {|x| x.include? 'normalized_'}
+    params.require("complete_factor_model").permit("name", *permit_arguments)
   end
 
 end

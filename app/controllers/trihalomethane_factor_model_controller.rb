@@ -9,13 +9,8 @@ class TrihalomethaneFactorModelController < ApplicationController
   private
 
   def trihalomethane_factor_model_params
-    params.require("trihalomethane_factor_model").permit(
-      "chloroform_weight",
-      "bromoform_weight",
-      "bromodichloromethane_weight",
-      "dibromochloromethane_weight",
-      "name"
-    )
+    permit_arguments = TrihalomethaneFactorModel.column_names.select{|x| x.include? '_weight' }
+    params.require("trihalomethane_factor_model").permit("name", *permit_arguments)
   end
 
 end

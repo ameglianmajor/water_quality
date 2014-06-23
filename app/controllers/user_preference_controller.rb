@@ -10,21 +10,8 @@ class UserPreferenceController < ApplicationController
   private
 
   def user_preference_params
-    params.require("user_preference").permit(
-      "display_chloroform",
-      "display_bromoform",
-      "display_bromodichloromethane",
-      "display_dibromochloromethane",
-      "display_arsenic",
-      "display_nitrate",
-      "display_alpha_activity",
-      "display_beta_activity",
-      "display_radium_226",
-      "display_radium_228",
-      "display_tritium",
-      "display_strontium_90",
-      "display_uranium"
-    )
+    permit_arguments = UserPreference.column_names.select{|x| x.include? 'display_' }
+    params.require("user_preference").permit(*permit_arguments)
   end
 
 end
