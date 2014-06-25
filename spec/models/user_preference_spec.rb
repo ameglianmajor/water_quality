@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe UserPreference, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "has" do
+    it "a valid factory." do
+      FactoryGirl.create(:user_preference).should be_valid
+    end
+  end
 end

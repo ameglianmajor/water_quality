@@ -14,5 +14,6 @@ FactoryGirl.define do
     normalized_tritium_weight 1.5
     normalized_strontium_90_weight 1.5
     normalized_uranium_weight 1.5
+    name 'uniform model 1'
   end
 end
