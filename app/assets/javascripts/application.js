@@ -10,12 +10,12 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require forem
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
-//= require jquery.ui.all
 //= require jquery-tablesorter
 //= require bootstrap
 //= require d3
 //= require turbolinks
+//= require forem
 //= require_tree .
