@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
-# Ruby version
-ruby '2.1.2'
-gem 'rails', '4.1.1' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.1.9' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.0.0' # Use CoffeeScript for .js.coffee assets and views
