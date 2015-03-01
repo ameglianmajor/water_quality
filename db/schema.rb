@@ -11,25 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617020809) do
+ActiveRecord::Schema.define(version: 20150301024457) do
 
   create_table "complete_factor_models", force: true do |t|
-    t.float    "normalized_chloroform_weight"
-    t.float    "normalized_bromoform_weight"
-    t.float    "normalized_bromodichloromethane_weight"
-    t.float    "normalized_arsenic_weight"
-    t.float    "normalized_nitrate_weight"
-    t.float    "normalized_alpha_activity_weight"
-    t.float    "normalized_beta_activity_weight"
-    t.float    "normalized_radium_226_weight"
-    t.float    "normalized_radium_228_weight"
-    t.float    "normalized_tritium_weight"
-    t.float    "normalized_strontium_90_weight"
-    t.float    "normalized_uranium_weight"
+    t.float    "normalized_chloroform_weight",           limit: 24
+    t.float    "normalized_bromoform_weight",            limit: 24
+    t.float    "normalized_bromodichloromethane_weight", limit: 24
+    t.float    "normalized_arsenic_weight",              limit: 24
+    t.float    "normalized_nitrate_weight",              limit: 24
+    t.float    "normalized_alpha_activity_weight",       limit: 24
+    t.float    "normalized_beta_activity_weight",        limit: 24
+    t.float    "normalized_radium_226_weight",           limit: 24
+    t.float    "normalized_radium_228_weight",           limit: 24
+    t.float    "normalized_tritium_weight",              limit: 24
+    t.float    "normalized_strontium_90_weight",         limit: 24
+    t.float    "normalized_uranium_weight",              limit: 24
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.float    "normalized_dibromochloromethane_weight"
+    t.float    "normalized_dibromochloromethane_weight", limit: 24
   end
 
   create_table "complete_factor_models_user_preferences", id: false, force: true do |t|
@@ -41,16 +41,17 @@ ActiveRecord::Schema.define(version: 20140617020809) do
 
   create_table "contaminant_normalizations", force: true do |t|
     t.string   "contaminant"
-    t.float    "normalization_factor"
+    t.float    "normalization_factor", limit: 24
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "forem_categories", force: true do |t|
-    t.string   "name",       null: false
+    t.string   "name",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "position",   default: 0
   end
 
   add_index "forem_categories", ["slug"], name: "index_forem_categories_on_slug", unique: true, using: :btree
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(version: 20140617020809) do
     t.integer "category_id"
     t.integer "views_count", default: 0
     t.string  "slug"
+    t.integer "position",    default: 0
   end
 
   add_index "forem_forums", ["slug"], name: "index_forem_forums_on_slug", unique: true, using: :btree
@@ -142,10 +144,10 @@ ActiveRecord::Schema.define(version: 20140617020809) do
   add_index "forem_views", ["viewable_id"], name: "index_forem_views_on_viewable_id", using: :btree
 
   create_table "trihalomethane_factor_models", force: true do |t|
-    t.float    "chloroform_weight"
-    t.float    "bromoform_weight"
-    t.float    "bromodichloromethane_weight"
-    t.float    "dibromochloromethane_weight"
+    t.float    "chloroform_weight",           limit: 24
+    t.float    "bromoform_weight",            limit: 24
+    t.float    "bromodichloromethane_weight", limit: 24
+    t.float    "dibromochloromethane_weight", limit: 24
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
@@ -203,21 +205,21 @@ ActiveRecord::Schema.define(version: 20140617020809) do
 
   create_table "water_samples", force: true do |t|
     t.string   "site"
-    t.float    "chloroform"
-    t.float    "bromoform"
-    t.float    "bromodichloromethane"
-    t.float    "dibromochloromethane"
+    t.float    "chloroform",           limit: 24
+    t.float    "bromoform",            limit: 24
+    t.float    "bromodichloromethane", limit: 24
+    t.float    "dibromochloromethane", limit: 24
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "arsenic"
-    t.float    "nitrate"
-    t.float    "alpha_activity"
-    t.float    "beta_activity"
-    t.float    "radium_226"
-    t.float    "radium_228"
-    t.float    "tritium"
-    t.float    "strontium_90"
-    t.float    "uranium"
+    t.float    "arsenic",              limit: 24
+    t.float    "nitrate",              limit: 24
+    t.float    "alpha_activity",       limit: 24
+    t.float    "beta_activity",        limit: 24
+    t.float    "radium_226",           limit: 24
+    t.float    "radium_228",           limit: 24
+    t.float    "tritium",              limit: 24
+    t.float    "strontium_90",         limit: 24
+    t.float    "uranium",              limit: 24
   end
 
 end
