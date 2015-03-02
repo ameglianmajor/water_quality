@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   apipie
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.
@@ -20,7 +19,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-
 
   post 'user_preference/update'
   post 'trihalomethane_factor_model/create'
