@@ -14,22 +14,22 @@
 ActiveRecord::Schema.define(version: 20150301024457) do
 
   create_table "complete_factor_models", force: true do |t|
-    t.float    "normalized_chloroform_weight",           limit: 24
-    t.float    "normalized_bromoform_weight",            limit: 24
-    t.float    "normalized_bromodichloromethane_weight", limit: 24
-    t.float    "normalized_arsenic_weight",              limit: 24
-    t.float    "normalized_nitrate_weight",              limit: 24
-    t.float    "normalized_alpha_activity_weight",       limit: 24
-    t.float    "normalized_beta_activity_weight",        limit: 24
-    t.float    "normalized_radium_226_weight",           limit: 24
-    t.float    "normalized_radium_228_weight",           limit: 24
-    t.float    "normalized_tritium_weight",              limit: 24
-    t.float    "normalized_strontium_90_weight",         limit: 24
-    t.float    "normalized_uranium_weight",              limit: 24
+    t.float    "normalized_chloroform_weight",           limit: 24, default: 0.0, null: false
+    t.float    "normalized_bromoform_weight",            limit: 24, default: 0.0, null: false
+    t.float    "normalized_bromodichloromethane_weight", limit: 24, default: 0.0, null: false
+    t.float    "normalized_arsenic_weight",              limit: 24, default: 0.0, null: false
+    t.float    "normalized_nitrate_weight",              limit: 24, default: 0.0, null: false
+    t.float    "normalized_alpha_activity_weight",       limit: 24, default: 0.0, null: false
+    t.float    "normalized_beta_activity_weight",        limit: 24, default: 0.0, null: false
+    t.float    "normalized_radium_226_weight",           limit: 24, default: 0.0, null: false
+    t.float    "normalized_radium_228_weight",           limit: 24, default: 0.0, null: false
+    t.float    "normalized_tritium_weight",              limit: 24, default: 0.0, null: false
+    t.float    "normalized_strontium_90_weight",         limit: 24, default: 0.0, null: false
+    t.float    "normalized_uranium_weight",              limit: 24, default: 0.0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.float    "normalized_dibromochloromethane_weight", limit: 24
+    t.float    "normalized_dibromochloromethane_weight", limit: 24, default: 0.0, null: false
   end
 
   create_table "complete_factor_models_user_preferences", id: false, force: true do |t|
@@ -144,10 +144,10 @@ ActiveRecord::Schema.define(version: 20150301024457) do
   add_index "forem_views", ["viewable_id"], name: "index_forem_views_on_viewable_id", using: :btree
 
   create_table "trihalomethane_factor_models", force: true do |t|
-    t.float    "chloroform_weight",           limit: 24
-    t.float    "bromoform_weight",            limit: 24
-    t.float    "bromodichloromethane_weight", limit: 24
-    t.float    "dibromochloromethane_weight", limit: 24
+    t.float    "chloroform_weight",           limit: 24, default: 0.0, null: false
+    t.float    "bromoform_weight",            limit: 24, default: 0.0, null: false
+    t.float    "bromodichloromethane_weight", limit: 24, default: 0.0, null: false
+    t.float    "dibromochloromethane_weight", limit: 24, default: 0.0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
