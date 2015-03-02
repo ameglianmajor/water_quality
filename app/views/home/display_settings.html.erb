@@ -1,77 +1,85 @@
-    <div class="container display-settings-container col-md-6 col-md-offset-3">
-      <h1>Display Settings</h1>
-      <div class="how-step">
-        <div class="number-circle">1</div> 
-        <div class="display-text"> 
-          <p>Select the contaminants you wish displayed.</p>
-          <div>
-            <%= form_for :user_preference , url: {action: "update", controller: "user_preference"} do |f| %>
-              <div class="checkbox-section">
-                <ul class="checkbox-grid">
-                  <% UserPreference.filtered_columns.each do |column_name| %>
-                    <li>
-                      <%= f.label column_name.to_sym, "#{display(column_name)}", :class => "display-settings-label" %>
-                      <%= f.check_box column_name.to_sym, {:class => "display-settings-checkbox"}, true, false %>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-              <center class="button-section">
-                <%= f.submit %>
-              </center>
-            <% end %>
+<div class="container display-settings-container col-md-6 col-md-offset-3">
+  <h1>Display Settings</h1>
+  <div class="how-step">
+    <div class="number-circle">1</div>
+    <div class="display-text">
+      <p>Select the contaminants you wish displayed.</p>
+      <div>
+        <%= form_for :user_preference , url: {action: "update", controller: "user_preference"} do |f| %>
+          <div class="checkbox-section">
+            <ul class="checkbox-grid">
+              <% UserPreference.filtered_columns.each do |column_name| %>
+                <li>
+                  <%= f.label column_name.to_sym, "#{display(column_name)}", :class => "display-settings-label" %>
+                  <%= f.check_box column_name.to_sym, {:class => "display-settings-checkbox"}, true, false %>
+                </li>
+              <% end %>
+            </ul>
           </div>
-        </div>
-      </div>
-      <div class="how-step">
-        <div class="number-circle">2</div>
-        <div class="display-text"> 
-          <p>Select the trihalomethane factor models you wish to display.</p>
-          <div>
-            <%= form_for :trihalomethane_factor_model_preference , url: {action: "update", controller: "trihalomethane_factor_model_preference"} do |f| %>
-              <div class="checkbox-section">
-                <ul class="checkbox-grid">
-                  <% @all_trihalomethane_factor_models.each do |model| %>
-                    <li>
-                      <%= f.label model.sym_name, "#{model.name}", :class => "display-settings-label" %>
-                      <%= f.check_box model.sym_name, {:class => "display-settings-checkbox"}, model.id, false %>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-              <center class="button-section">
-                <%= f.submit %>
-              </center>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <div class="how-step">
-        <div class="number-circle">3</div>
-        <div class="display-text"> 
-          <p>Select the complete factor models you wish to display.</p>
-            <div>
-            <%= form_for :complete_factor_model_preference , url: {action: "update", controller: "complete_factor_model_preference"} do |f| %>
-              <div class="checkbox-section">
-                <ul class="checkbox-grid">
-                  <% @all_complete_factor_models.each do |model| %>
-                    <li>
-                      <%= f.label model.sym_name, "#{model.name}", :class => "display-settings-label" %>
-                      <%= f.check_box model.sym_name, {:class => "display-settings-checkbox"}, model.id, false %>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
-              <center class="button-section">
-                <%= f.submit %>
-              </center>
-            <% end %>
-          </div>
-        </div>
+          <center class="button-section">
+            <%= f.submit %>
+          </center>
+        <% end %>
       </div>
     </div>
+  </div>
+  <div class="how-step">
+    <div class="number-circle">2</div>
+    <div class="display-text">
+      <% if @all_trihalomethane_factor_models.empty? %>
+        <p>No complete factor models have been created.</p>
+      <% else %>
+        <p>Select the trihalomethane factor models you wish to display.</p>
+        <div>
+          <%= form_for :trihalomethane_factor_model_preference , url: {action: "update", controller: "trihalomethane_factor_model_preference"} do |f| %>
+            <div class="checkbox-section">
+              <ul class="checkbox-grid">
+                <% @all_trihalomethane_factor_models.each do |model| %>
+                  <li>
+                    <%= f.label model.sym_name, "#{model.name}", :class => "display-settings-label" %>
+                    <%= f.check_box model.sym_name, {:class => "display-settings-checkbox"}, model.id, false %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+            <center class="button-section">
+              <%= f.submit %>
+            </center>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="how-step">
+    <div class="number-circle">3</div>
+    <div class="display-text">
+      <% if @all_complete_factor_models.empty? %>
+        <p>No complete factor models have been created.</p>
+      <% else %>
+        <p>Select the complete factor models you wish to display.</p>
+        <div>
+          <%= form_for :complete_factor_model_preference , url: {action: "update", controller: "complete_factor_model_preference"} do |f| %>
+            <div class="checkbox-section">
+              <ul class="checkbox-grid">
+                <% @all_complete_factor_models.each do |model| %>
+                  <li>
+                    <%= f.label model.sym_name, "#{model.name}", :class => "display-settings-label" %>
+                    <%= f.check_box model.sym_name, {:class => "display-settings-checkbox"}, model.id, false %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+            <center class="button-section">
+              <%= f.submit %>
+            </center>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 <script type="text/javascript">
-$(document).ready(function() {
-  $('a[href*="display_settings"]').parent().addClass('active');
-});
+  $(document).ready(function() {
+    $('a[href*="display_settings"]').parent().addClass('active');
+  });
 </script> 
