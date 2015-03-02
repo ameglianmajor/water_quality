@@ -42,10 +42,9 @@ area.
    ```
 
    When running `rails g forem:install`, accept the first two default options.
-   Then, select `n` for the last question. After running `rails s`, the
-   application is ready to use. To utilize forum functionality, create a user
-   and then set the forem_admin property to true for that user. Once enabled,
-   this user can create new forums.
+   After running `rails s`, the application is ready to use. To utilize forum
+   functionality, create a user and then set the forem_admin property to true
+   for that user. Once enabled, this user can create new forums.
 
 ## Quick Test
 
@@ -63,10 +62,14 @@ Water Quality Web Application locally on port 3000.
 
 http://localhost:3000/apipie
 
+Currently, no apipie documentation has been written. As a result, no regexp
+validation of input arguments is in place.
+
 ## Tests
 
 This section is broken down into a section for running tests and a section for
-viewing the test coverage report.
+viewing the test coverage report. Test coverage is lacking. Specs need to be
+written for this application.
 
 ### Running Tests
 
