@@ -1,16 +1,17 @@
+# This concern adds the ability to filter columns of ActiveRecord models.
 module FilteredRecord
   extend ActiveSupport::Concern
 
   def filtered_columns
-    values = self.attributes.map do |key, value|
+    values = attributes.map do |key, value|
       value if self.class.allowed? key
     end
-    values.select{|x| x}
+    values.select { |x| x }
   end
 
   module ClassMethods
     def filtered_columns
-      self.column_names.select {|x| self.allowed?(x) }
+      column_names.select { |x| self.allowed?(x) }
     end
 
     def allowed? value

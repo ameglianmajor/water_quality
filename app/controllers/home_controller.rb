@@ -1,5 +1,6 @@
+# This controller is used to handle the actions triggered by the tabs on the
+# home page.
 class HomeController < ApplicationController
-
   before_filter :authenticate_user!, only: [:display_settings, :create_model]
 
   def index
@@ -21,5 +22,4 @@ class HomeController < ApplicationController
 
   def create_model
   end
-
 end

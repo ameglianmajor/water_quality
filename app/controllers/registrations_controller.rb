@@ -1,3 +1,4 @@
+# This controller is used to register users.
 class RegistrationsController < Devise::RegistrationsController
   def create
     super

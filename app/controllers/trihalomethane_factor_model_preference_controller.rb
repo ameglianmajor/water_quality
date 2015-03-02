@@ -1,6 +1,8 @@
+# This controller allows the user to select which trihalomethane factor
+# models should be displayed.
 class TrihalomethaneFactorModelPreferenceController < ApplicationController
   def update
-    model_ids = params["trihalomethane_factor_model_preference"].collect do |k,v|
+    model_ids = params['trihalomethane_factor_model_preference'].collect do |k, v|
       v.to_i
     end
     up = current_user.user_preference

@@ -1,6 +1,8 @@
+# This controller allows the user to select which complete factor
+# models should be displayed.
 class CompleteFactorModelPreferenceController < ApplicationController
   def update
-    model_ids = params["complete_factor_model_preference"].collect do |k,v|
+    model_ids = params["complete_factor_model_preference"].collect do |k, v|
       v.to_i
     end
     up = current_user.user_preference

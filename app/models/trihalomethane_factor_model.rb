@@ -3,7 +3,6 @@ class TrihalomethaneFactorModel < ActiveRecord::Base
   has_and_belongs_to_many :user_preferences
 
   def sym_name
-    self.name.gsub(' ','_')
+    name.gsub(' ', '_')
   end
-
 end

@@ -5,15 +5,12 @@ class UserPreference < ActiveRecord::Base
   has_and_belongs_to_many :complete_factor_models
 
   def selected(column_name)
-    self.send("display_#{column_name}".to_sym)
+    send("display_#{column_name}".to_sym)
   end
 
   def set_options_to_false
-    self.class.columns_hash.each do |k,v|
-      if v.type == :boolean
-        self.send("#{k}=", false)
-      end
+    self.class.columns_hash.each do |k, v|
+      send("#{k}=", false) if v.type == :boolean
     end
   end
-
 end

@@ -1,3 +1,4 @@
+# This controller allows the user to update his or her preferences.
 class UserPreferenceController < ApplicationController
   def update
     up = current_user.user_preference
@@ -10,8 +11,7 @@ class UserPreferenceController < ApplicationController
   private
 
   def user_preference_params
-    permit_arguments = UserPreference.column_names.select{|x| x.include? 'display_' }
+    permit_arguments = UserPreference.column_names.select{ |x| x.include? 'display_' }
     params.require("user_preference").permit(*permit_arguments)
   end
-
 end
