@@ -1,14 +1,11 @@
 module FilteredRecord
+  extend ActiveSupport::Concern
 
   def filtered_columns
     values = self.attributes.map do |key, value|
       value if self.class.allowed? key
     end
     values.select{|x| x}
-  end
-
-  def self.included(base)
-    base.extend(ClassMethods)
   end
 
   module ClassMethods
@@ -26,5 +23,4 @@ module FilteredRecord
       end
     end
   end
-
 end
