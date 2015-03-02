@@ -35,25 +35,14 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'pry-byebug'
+  gem 'rspec-rails'
 end
 
 group :test do
-  gem 'capybara'
-  gem 'capybara-webkit'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'simplecov', require: false
   gem 'factory_girl_rails'
-  gem 'guard-rspec'
-  gem 'launchy'
-  gem 'poltergeist'
-  gem 'rb-fsevent' if `uname` =~ /Darwin/
-  gem 'rspec-rails'
-  gem 'spring-commands-rspec'
-end
-
-group :production do
-  gem 'rails_12factor'
-  gem 'unicorn'
-  gem 'rails_serve_static_assets'
 end
 
 # Use ActiveModel has_secure_password
