@@ -12,7 +12,6 @@ ready = function () {
     resizable: false,
     draggable: false,
     closeOnEscape: true,
-    position: ['center', 80],
     open: function(event, ui) { $(".ui-dialog-titlebar-close", ui.dialog || ui).hide() }
   };
 
