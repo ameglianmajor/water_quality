@@ -18,4 +18,21 @@ class ApplicationController < ActionController::Base
     current_user
   end
   helper_method :forem_user
+
+  private
+
+  def handle_error(exception)
+    respond_to do |format|
+      handle_response(exception, format)
+    end
+  end
+
+  def handle_response(exception, format)
+    format.json do
+      render json: { errors: exception.to_s }, status: :bad_request
+    end
+    format.html do
+      render json: { errors: exception.to_s }, status: :bad_request
+    end
+  end
 end

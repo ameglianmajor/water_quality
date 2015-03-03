@@ -1,3 +1,4 @@
+# Home helpers
 module HomeHelper
   def display(name)
     new_name = case name
