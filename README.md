@@ -62,8 +62,7 @@ Water Quality Web Application locally on port 3000.
 
 http://localhost:3000/apipie
 
-Currently, no apipie documentation has been written. As a result, no regexp
-validation of input arguments is in place.
+The apipie documentation is not complete, but some of it has been written.
 
 ## Tests
 
