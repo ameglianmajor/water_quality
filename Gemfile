@@ -22,6 +22,7 @@ gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 gem 'mandrill-api'
 gem 'httparty'
 gem 'apipie-rails'
+gem 'bower-rails'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0' # bundle exec rake doc:rails generates the API under doc/api.
