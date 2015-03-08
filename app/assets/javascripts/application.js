@@ -17,5 +17,6 @@
 //= require bootstrap
 //= require d3
 //= require turbolinks
+//= require angular/angular
 //= require forem
 //= require_tree .
