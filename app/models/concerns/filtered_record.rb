@@ -9,19 +9,14 @@ module FilteredRecord
     values.select { |x| x }
   end
 
+  # The class methods when this Concern is included.
   module ClassMethods
     def filtered_columns
       column_names.select { |x| self.allowed?(x) }
     end
 
-    def allowed? value
-      case value
-        when 'id' then false
-        when 'created_at' then false
-        when 'updated_at' then false
-        when 'name' then false
-        else true
-      end
+    def allowed?(value)
+      %w(id created_at updated_at name).include?(value) ? false : true
     end
   end
 end

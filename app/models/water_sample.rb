@@ -1,3 +1,4 @@
+# Model for calculating water sample quality
 class WaterSample < ActiveRecord::Base
   include FilteredRecord
 
@@ -13,16 +14,12 @@ class WaterSample < ActiveRecord::Base
 
   def self.add_tfms(columns, user_preference)
     trihalomethane_factor_models = user_preference.trihalomethane_factor_models
-    trihalomethane_factor_models.each do |x|
-      columns << x.name
-    end
+    columns.push(*trihalomethane_factor_models.map(&:name))
   end
 
   def self.add_cfms(columns, user_preference)
     complete_factor_models = user_preference.complete_factor_models
-    complete_factor_models.each do |x|
-      columns << x.name
-    end
+    columns.push(*complete_factor_models.map(&:name))
   end
 
   def selected_columns(user_preference)
@@ -31,7 +28,7 @@ class WaterSample < ActiveRecord::Base
         value
       end
     end
-    non_nil_values = values.select { |x| x }
+    non_nil_values = values.compact
     if user_preference
       add_tfm_values(non_nil_values, user_preference)
       add_cfm_values(non_nil_values, user_preference)
@@ -43,36 +40,33 @@ class WaterSample < ActiveRecord::Base
     weighted_contributions = factor.attributes.collect do |k, v|
       if k.include? '_weight'
         contaminant = self.class.parse_string(k)
-        if normalize
-          normalization = ContaminantNormalization.find_by_contaminant(contaminant).normalization_factor
-          product = v * send(contaminant.to_sym) / normalization
-        else
-          product = v * send(contaminant.to_sym)
-        end
+        normalization =
+          normalize ? ContaminantNormalization.find_by_contaminant(contaminant).normalization_factor : 1
+        product = v * send(contaminant.to_sym) / normalization
       end
       product
     end
-    weighted_contributions.select! { |x| x }
+    weighted_contributions.compact!
     weighted_contributions.inject(0) { |result, element| result + element }
   end
 
   def add_tfm_values(values, user_preference)
     trihalomethane_factor_models = user_preference.trihalomethane_factor_models
-    trihalomethane_factor_models.each do |x|
-      values << calculate_weighted_factor(x)
-    end
+    values.push(*trihalomethane_factor_models.map do |model|
+      calculate_weighted_factor(model)
+    end)
   end
 
   def add_cfm_values(values, user_preference)
     complete_factor_models = user_preference.complete_factor_models
-    complete_factor_models.each do |x|
-      values << calculate_weighted_factor(x, true)
-    end
+    values.push(*complete_factor_models.map do |model|
+      calculate_weighted_factor(model, true)
+    end)
   end
 
   private
 
-  def self.parse_string input_string
+  def self.parse_string(input_string)
     input_string.gsub('_weight', '').gsub('normalized_', '')
   end
 

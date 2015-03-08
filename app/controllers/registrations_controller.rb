@@ -8,5 +8,5 @@ class RegistrationsController < Devise::RegistrationsController
     current_user.first_name = params['user']['first_name']
     current_user.last_name = params['user']['last_name']
     current_user.save
-  end 
+  end
 end

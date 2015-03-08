@@ -1,3 +1,4 @@
+# Model for storing user display preferences.
 class UserPreference < ActiveRecord::Base
   include FilteredRecord
   has_one :user

@@ -1,7 +1,7 @@
 # This module contains helpers for the CompleteFactorModelController
 module CompleteFactorModelHelper
   def self.columns
-    CompleteFactorModel.column_names.grep /_weight$/
+    CompleteFactorModel.column_names.grep(/_weight$/)
   end
 
   def self.weight_validator
